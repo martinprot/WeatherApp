@@ -13,6 +13,7 @@ extension Weather: Mappable { }
 class WeatherResponseMapper: ClassicResponseMapper<Weather> {
 
     enum Key: String, ServiceKey {
+        case timestamp = "dt"
         case weather = "weather"
         case mainWeather = "main"
         case weatherDescription = "description"
@@ -22,6 +23,7 @@ class WeatherResponseMapper: ClassicResponseMapper<Weather> {
     static func process(jsonObject: Any) throws -> Weather {
         guard
             let json = jsonObject as? [String: Any],
+            let timestamp: TimeInterval = json.key(Key.timestamp),
             let rawWeathers: [[String: Any]] = json.key(Key.weather),
             let rawWeather = rawWeathers.first,
             let mainWeather: String = rawWeather.key(Key.mainWeather),
@@ -30,6 +32,7 @@ class WeatherResponseMapper: ClassicResponseMapper<Weather> {
             else {
                 throw ResponseMapperError.missingAttribute
         }
-        return Weather(main: mainWeather, description: weatherDescription, icon: weatherIconName)
+        let date = Date(timeIntervalSince1970: timestamp)
+        return Weather(date: date, main: mainWeather, description: weatherDescription, icon: weatherIconName)
     }
 }

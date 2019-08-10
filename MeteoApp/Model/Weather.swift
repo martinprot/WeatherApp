@@ -10,6 +10,7 @@ import Foundation
 import MPModelKit
 
 struct Weather {
+    let date: Date
     let main: String
     let description: String
     let icon: String

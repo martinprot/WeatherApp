@@ -56,6 +56,12 @@ extension CityViewController: UITableViewDataSource {
         let cell: WeatherTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let weather = self.viewModel.forecast[indexPath.row]
         cell.loadImage(weather: weather)
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.doesRelativeDateFormatting = true
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
+        cell.weatherDateLabel?.text = dateFormatter.string(from: weather.date)
         cell.weatherLabel?.text = weather.main
         cell.weatherDescription?.text = weather.description
         return cell

@@ -39,13 +39,13 @@ class WeatherTests: XCTestCase {
     func testWeatherFetch() {
         let expectation = self.expectation(description: "Weather API call")
         let vm = WeatherViewModel(city: self.city, apiConfiguration: .sampleOpenWeather)
-        vm.fetchMeteo { result in
+        vm.fetchWeather { result in
             switch result {
             case .failure(let error):
                 XCTAssert(false, "error while fetching meteo: \(error)")
 
             case .success(let weather):
-
+                XCTAssert(weather.date.timeIntervalSince1970 == 1485789600.0, "Weather date be 2017-01-30 15:20:00")
                 XCTAssert(weather.main == "Drizzle", "Weather should be Drizzle")
                 XCTAssert(weather.description == "light intensity drizzle", "Weather description should be light intensity drizzle")
                 XCTAssert(weather.icon == "09d", "Weather icon should be 09d")

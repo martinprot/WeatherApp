@@ -20,7 +20,7 @@ final class WeatherViewModel {
     }
 
     /// Fetch current weather for the view model city
-    func fetchMeteo(completion: @escaping (Result<Weather, Error>) -> Void) {
+    func fetchWeather(completion: @escaping (Result<Weather, Error>) -> Void) {
         guard let cityName = city.name else {
             completion(.failure(VMError.noCityName))
             return

@@ -35,6 +35,13 @@ class CitiesTableViewController: UITableViewController {
         self.tableView.rowHeight = CityTableViewCell.height
         self.tableView.register(cellType: CityTableViewCell.self)
         self.title = "Cities"
+
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(onReload(_:)))
+    }
+
+    @objc func onReload(_ sender: UIBarButtonItem) {
+        self.viewModel.clearCache()
+        self.tableView?.reloadData()
     }
 
     // MARK: - Table view data source

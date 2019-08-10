@@ -13,6 +13,10 @@ final class CitiesViewModel: FetchViewModel<City> {
 
     private var weathers: [IndexPath: Weather] = [:]
 
+    func clearCache() {
+        self.weathers = [:]
+    }
+
     func cityName(at ip: IndexPath) -> String? {
         return self.object(at: ip)?.name
     }
@@ -48,7 +52,7 @@ final class CitiesViewModel: FetchViewModel<City> {
             return
         }
         let vm = WeatherViewModel(city: city)
-        vm.fetchMeteo { [weak self] result in
+        vm.fetchWeather { [weak self] result in
             if case .success(let weather) = result {
                 self?.weathers[indexPath] = weather
             }
