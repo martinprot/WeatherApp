@@ -8,6 +8,7 @@
 
 import UIKit
 import Reusable
+import ImageLoader
 
 protocol CitiesTableViewControllerDelegate: class {
     func controller(_ controller: CitiesTableViewController, didSelect city: City)
@@ -51,6 +52,22 @@ class CitiesTableViewController: UITableViewController {
         let cell: CityTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         cell.nameLabel?.text = self.viewModel.cityName(at: indexPath)
         return cell
+    }
+
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let cell = cell as? CityTableViewCell else { return }
+        cell.loader?.startAnimating()
+        self.viewModel.weather(at: indexPath) { result in
+            cell.loader?.stopAnimating()
+            switch result {
+            case .success(let weather):
+                cell.weatherLabel?.text = weather.main
+                cell.loadImage(weather: weather)
+
+            case .failure(let error):
+                print("cannot get weather at \(indexPath): \(error)")
+            }
+        }
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -9,6 +9,7 @@ target 'MeteoApp' do
     pod "mpkit", :git => "https://github.com/martinprot/mpkit"
     pod "MPModelKit", :git => "https://github.com/martinprot/MPModelKit.git"
 
+    pod "ImageLoader"
     pod "Reusable"
 
     target 'MeteoAppTests' do

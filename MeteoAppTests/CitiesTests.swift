@@ -45,4 +45,25 @@ class CitiesTests: XCTestCase {
         XCTAssert(cityName == "Lyon", "The city should be Lyon, not \(cityName ?? "none")")
     }
 
+    func testWeatherAtFirstRow() {
+        // populating the data
+        testFetchPredefinedCities()
+
+        guard let ds = self.dataStore else { return XCTFail() }
+        let vm = CitiesViewModel(fetchConfiguration: .allCities(on: ds))
+
+        let expectation = self.expectation(description: "Weather API call")
+        vm.weather(at: IndexPath(row: 0, section: 0)) { result in
+            switch result {
+            case .success:
+                XCTAssert(true)
+
+            case .failure:
+                XCTFail()
+            }
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 10)
+    }
+
 }

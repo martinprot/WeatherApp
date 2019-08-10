@@ -1,5 +1,5 @@
 //
-//  CityTableViewCell.swift
+//  WeatherTableViewCell.swift
 //  MeteoApp
 //
 //  Created by Martin Prot on 10/08/2019.
@@ -9,22 +9,18 @@
 import UIKit
 import Reusable
 
-class CityTableViewCell: UITableViewCell, WeatherImageLoadable, NibReusable {
-    static let height: CGFloat = 100
+class WeatherTableViewCell: UITableViewCell, WeatherImageLoadable, NibReusable {
+    static let height: CGFloat = 80
 
-    @IBOutlet var nameLabel: UILabel?
     @IBOutlet var weatherLabel: UILabel?
+    @IBOutlet var weatherDescription: UILabel?
     @IBOutlet var weatherImage: UIImageView?
     @IBOutlet var loader: UIActivityIndicatorView?
-
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        weatherLabel?.text = nil
-    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    
+
+
 }

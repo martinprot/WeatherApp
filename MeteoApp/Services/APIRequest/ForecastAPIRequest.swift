@@ -1,5 +1,5 @@
 //
-//  CurrentWeatherAPIRequest.swift
+//  ForecastAPIRequest.swift
 //  MeteoApp
 //
 //  Created by Martin Prot on 10/08/2019.
@@ -8,14 +8,14 @@
 
 import MPModelKit
 
-struct CurrentWeatherAPIRequest: BackendAPIObjectRequest {
+struct ForecastAPIRequest: BackendAPIObjectRequest {
 
     let cityName: String
     let countryCode: String?
     let token: String
 
     /// Defines the api endpoint to use
-    let endpoint: String = "weather"
+    let endpoint: String = "forecast"
 
     // Define what method
     let method: NetworkService.Method = .GET
@@ -24,11 +24,14 @@ struct CurrentWeatherAPIRequest: BackendAPIObjectRequest {
     var parameters: [String: Any]? {
         if let cc = self.countryCode {
             return ["q": "\(self.cityName),\(cc)",
-                    "appid": self.token]
+                "appid": self.token]
         }
         else {
             return ["q": self.cityName,
                     "appid": self.token]
         }
     }
+
+    let objectKey: String? = "list"
 }
+

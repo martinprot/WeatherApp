@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paris" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOY-li-DHE">
-                        <rect key="frame" x="16" y="0.0" width="317" height="99.5"/>
+                        <rect key="frame" x="16" y="0.0" width="317" height="79.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="34"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -32,20 +32,34 @@
                             <constraint firstAttribute="width" constant="75" id="gdr-RK-auJ"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PgZ-C7-8Ro">
+                        <rect key="frame" x="16" y="79.5" width="0.0" height="0.0"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="r6K-bk-TmH">
+                        <rect key="frame" x="415" y="40" width="20" height="20"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </activityIndicatorView>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="GOY-li-DHE" secondAttribute="trailing" constant="150" id="M5u-Yj-inn"/>
+                    <constraint firstItem="PgZ-C7-8Ro" firstAttribute="baseline" secondItem="GOY-li-DHE" secondAttribute="baseline" constant="4" id="PaX-v1-jCW"/>
+                    <constraint firstItem="PgZ-C7-8Ro" firstAttribute="leading" secondItem="GOY-li-DHE" secondAttribute="leading" id="dTp-CC-1qp"/>
                     <constraint firstItem="GOY-li-DHE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="dVj-yR-L0Z"/>
                     <constraint firstAttribute="trailing" secondItem="Ce3-hB-tB9" secondAttribute="trailing" constant="20" id="gFP-aB-5I7"/>
                     <constraint firstItem="GOY-li-DHE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="hIb-I8-pPD"/>
-                    <constraint firstAttribute="bottom" secondItem="GOY-li-DHE" secondAttribute="bottom" id="kuI-27-ytS"/>
+                    <constraint firstAttribute="bottom" secondItem="GOY-li-DHE" secondAttribute="bottom" constant="20" id="kuI-27-ytS"/>
                     <constraint firstItem="Ce3-hB-tB9" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="teo-DM-hT9"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="loader" destination="r6K-bk-TmH" id="P5X-Uc-HYV"/>
                 <outlet property="nameLabel" destination="GOY-li-DHE" id="hLn-j3-9C9"/>
                 <outlet property="weatherImage" destination="Ce3-hB-tB9" id="jNd-Bi-PnZ"/>
+                <outlet property="weatherLabel" destination="PgZ-C7-8Ro" id="fvf-S8-gFZ"/>
             </connections>
             <point key="canvasLocation" x="255.79710144927537" y="130.58035714285714"/>
         </tableViewCell>

@@ -11,6 +11,8 @@ import MPModelKit
 
 final class CitiesViewModel: FetchViewModel<City> {
 
+    private var weathers: [IndexPath: Weather] = [:]
+
     func cityName(at ip: IndexPath) -> String? {
         return self.object(at: ip)?.name
     }
@@ -33,10 +35,31 @@ final class CitiesViewModel: FetchViewModel<City> {
             completion(.failure(error))
         }
     }
+
+    func weather(at indexPath: IndexPath, completion: @escaping (Result<Weather, Error>) -> Void) {
+        // Try the cached weather
+        if let weather = self.weathers[indexPath] {
+            completion(.success(weather))
+            return
+        }
+        // If not cached, download it
+        guard let city = self.object(at: indexPath) else {
+            completion(.failure(VMError.objectNotFound))
+            return
+        }
+        let vm = WeatherViewModel(city: city)
+        vm.fetchMeteo { [weak self] result in
+            if case .success(let weather) = result {
+                self?.weathers[indexPath] = weather
+            }
+            completion(result)
+        }
+    }
 }
 
 extension CitiesViewModel {
     enum VMError: Error {
         case fileNotFound
+        case objectNotFound
     }
 }

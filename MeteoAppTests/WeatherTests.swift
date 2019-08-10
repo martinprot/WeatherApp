@@ -38,16 +38,39 @@ class WeatherTests: XCTestCase {
 
     func testWeatherFetch() {
         let expectation = self.expectation(description: "Weather API call")
-        let vm = WeatherViewModel(city: self.city)
+        let vm = WeatherViewModel(city: self.city, apiConfiguration: .sampleOpenWeather)
         vm.fetchMeteo { result in
             switch result {
-            case .failure(let error): XCTAssert(false, "error while fetching meteo: \(error)")
-            case .success(let data):
-                XCTAssert(true)
-                expectation.fulfill()
+            case .failure(let error):
+                XCTAssert(false, "error while fetching meteo: \(error)")
+
+            case .success(let weather):
+
+                XCTAssert(weather.main == "Drizzle", "Weather should be Drizzle")
+                XCTAssert(weather.description == "light intensity drizzle", "Weather description should be light intensity drizzle")
+                XCTAssert(weather.icon == "09d", "Weather icon should be 09d")
             }
+            expectation.fulfill()
         }
         wait(for: [expectation], timeout: 10)
     }
+
+    func testWeatherForecast() {
+        let expectation = self.expectation(description: "Forecast API call")
+        let vm = WeatherViewModel(city: self.city, apiConfiguration: .sampleOpenWeather)
+        vm.fetchForecast { result in
+            switch result {
+            case .failure(let error):
+                XCTAssert(false, "error while fetching meteo: \(error)")
+
+            case .success(let weathers):
+                XCTAssert(weathers.count == 36, "There should be 36 forecasts")
+                XCTAssert(weathers[0].main == "Clear", "And the first should be Clear")
+            }
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 10)
+    }
+
 
 }

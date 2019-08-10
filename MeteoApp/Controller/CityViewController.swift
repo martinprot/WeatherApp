@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Reusable
 
 class CityViewController: UIViewController {
 
@@ -27,6 +28,36 @@ class CityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = self.viewModel.city.name
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(onReload(_:)))
+
+        self.tableView?.register(cellType: WeatherTableViewCell.self)
+        self.tableView?.rowHeight = WeatherTableViewCell.height
+        self.tableView?.allowsSelection = false
+
+        self.viewModel.fetchForecast { _ in
+            self.tableView?.reloadData()
+        }
     }
 
+    @objc func onReload(_ sender: UIBarButtonItem) {
+        self.viewModel.fetchForecast { _ in
+            self.tableView?.reloadData()
+        }
+    }
+}
+
+extension CityViewController: UITableViewDataSource {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.viewModel.forecast.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: WeatherTableViewCell = tableView.dequeueReusableCell(for: indexPath)
+        let weather = self.viewModel.forecast[indexPath.row]
+        cell.loadImage(weather: weather)
+        cell.weatherLabel?.text = weather.main
+        cell.weatherDescription?.text = weather.description
+        return cell
+    }
 }

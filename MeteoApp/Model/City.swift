@@ -20,7 +20,7 @@ class City: NSManagedObject {
 
 extension City {
     var location: CLLocation? {
-        guard self.latitude > 0, self.longitude > 0 else { return .none }
+        guard self.latitude != 0, self.longitude != 0 else { return .none }
         return CLLocation(latitude: self.latitude, longitude: self.longitude)
     }
 }
