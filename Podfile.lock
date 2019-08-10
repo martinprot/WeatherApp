@@ -1,0 +1,56 @@
+PODS:
+  - mpkit (0.1.0)
+  - MPModelKit (0.1.0):
+    - PromiseKit
+    - SimpleKeychain
+  - PromiseKit (6.8.4):
+    - PromiseKit/CorePromise (= 6.8.4)
+    - PromiseKit/Foundation (= 6.8.4)
+    - PromiseKit/UIKit (= 6.8.4)
+  - PromiseKit/CorePromise (6.8.4)
+  - PromiseKit/Foundation (6.8.4):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.8.4):
+    - PromiseKit/CorePromise
+  - Reusable (4.1.0):
+    - Reusable/Storyboard (= 4.1.0)
+    - Reusable/View (= 4.1.0)
+  - Reusable/Storyboard (4.1.0)
+  - Reusable/View (4.1.0)
+  - SimpleKeychain (0.9.0)
+
+DEPENDENCIES:
+  - mpkit (from `https://github.com/martinprot/mpkit`)
+  - MPModelKit (from `https://github.com/martinprot/MPModelKit.git`)
+  - Reusable
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - PromiseKit
+    - Reusable
+    - SimpleKeychain
+
+EXTERNAL SOURCES:
+  mpkit:
+    :git: https://github.com/martinprot/mpkit
+  MPModelKit:
+    :git: https://github.com/martinprot/MPModelKit.git
+
+CHECKOUT OPTIONS:
+  mpkit:
+    :commit: 14a10f1d90ea42fbce581e98fc31e8c4c3d1beb6
+    :git: https://github.com/martinprot/mpkit
+  MPModelKit:
+    :commit: dca132b0543b41a0028e64af0095134dd7da0849
+    :git: https://github.com/martinprot/MPModelKit.git
+
+SPEC CHECKSUMS:
+  mpkit: 6199220450b835aaa193e9d52fc0ea3d8a84f44e
+  MPModelKit: 04555b8a8a8ad2bcba76fc832577d82a1a2b8fda
+  PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
+  Reusable: 82be188f29d96dc5eff0db7b2393bcc08d2cdd5b
+  SimpleKeychain: 3be49072fd2d82de8fa83d847ef1e548622f8fc5
+
+PODFILE CHECKSUM: 990daaac3c4b5203c63aa9ee3d344588f7b4c1f5
+
+COCOAPODS: 1.5.3

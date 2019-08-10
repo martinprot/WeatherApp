@@ -1,0 +1,31 @@
+{
+  "name": "MPModelKit",
+  "version": "0.1.0",
+  "summary": "A lightweight toolkit that handle webservices and CoreData mapping",
+  "swift_version": "5",
+  "description": "First, handles webservice connexions with `BackendService` and `APIRequest` implementations.\nThen potentially maps the JSON into `Mappable` objects with `ResponseMapper` implementations.\nAlso, handles CoreData database with a `CoreDataManager` and some NSManagedObjectContext extensions.",
+  "homepage": "https://github.com/Martin Prot/MPModelKit",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Martin Prot": "martinprot@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/martinprot/MPModelKit.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "MPModelKit/Classes/**/*",
+  "dependencies": {
+    "PromiseKit": [
+
+    ],
+    "SimpleKeychain": [
+
+    ]
+  }
+}

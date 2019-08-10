@@ -1,0 +1,48 @@
+[
+    {
+        "identifier": 1,
+        "name": "Paris",
+        "countryCode": "fr",
+        "location": {
+            "latitude": 48.848195,
+            "longitude": 2.351110
+        }
+    },
+    {
+        "identifier": 2,
+        "name": "Nantes",
+        "countryCode": "fr",
+        "location": {
+            "latitude": 47.220687,
+            "longitude": -1.546693
+        }
+    },
+    {
+        "identifier": 3,
+        "name": "Bordeaux",
+        "countryCode": "fr",
+        "location": {
+            "latitude":  44.837797,
+            "longitude": -0.577062
+        }
+    },
+    {
+        "identifier": 4,
+        "name": "Lyon",
+        "countryCode": "fr",
+        "location": {
+            "latitude": 45.755170,
+            "longitude": 4.818454
+        }
+    },
+    {
+        "identifier": 5,
+        "name": "Marseille",
+        "countryCode": "fr",
+        "location": {
+            "latitude": 43.296100,
+            "longitude": 5.369868
+        }
+    }
+
+]

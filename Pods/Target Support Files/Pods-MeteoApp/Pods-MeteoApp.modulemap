@@ -1,0 +1,6 @@
+framework module Pods_MeteoApp {
+  umbrella header "Pods-MeteoApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
