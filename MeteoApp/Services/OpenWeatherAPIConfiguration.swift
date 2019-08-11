@@ -18,10 +18,11 @@ public extension BackendConfiguration {
     }
 
     static var openWeather: BackendConfiguration {
-        return BackendConfiguration(baseURL: openWeatherBaseURL)
-    }
-    static var sampleOpenWeather: BackendConfiguration {
+        #if SAMPLE
         return BackendConfiguration(baseURL: openWeatherSampleBaseURL)
+        #else
+        return BackendConfiguration(baseURL: openWeatherBaseURL)
+        #endif
     }
 }
 

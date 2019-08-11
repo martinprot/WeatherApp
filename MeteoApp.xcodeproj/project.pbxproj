@@ -51,6 +51,7 @@
 
 /* Begin PBXFileReference section */
 		21BA5D4C910CF1F6821B40DD /* Pods-MeteoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeteoApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeteoApp/Pods-MeteoApp.release.xcconfig"; sourceTree = "<group>"; };
+		2A0C519783E9902B87A32C7C /* Pods-MeteoApp.debug-sample.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeteoApp.debug-sample.xcconfig"; path = "Pods/Target Support Files/Pods-MeteoApp/Pods-MeteoApp.debug-sample.xcconfig"; sourceTree = "<group>"; };
 		2D712C7EBCA2529451210FF7 /* Pods_MeteoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeteoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B0B332822FEBAB50002CCE5 /* MeteoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeteoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B0B332B22FEBAB50002CCE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +87,7 @@
 		A60702478DA7FFA0F9C6B280 /* Pods-MeteoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeteoApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MeteoApp/Pods-MeteoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B0F2B9364AE03FFB90EE80BC /* Pods_MeteoAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MeteoAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0A12AD6903757E0CDE9BD8D /* Pods-MeteoAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeteoAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MeteoAppTests/Pods-MeteoAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		D4A5D7CF47E2D9980420B5F6 /* Pods-MeteoAppTests.debug-sample.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MeteoAppTests.debug-sample.xcconfig"; path = "Pods/Target Support Files/Pods-MeteoAppTests/Pods-MeteoAppTests.debug-sample.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +252,8 @@
 				21BA5D4C910CF1F6821B40DD /* Pods-MeteoApp.release.xcconfig */,
 				84EC2FBE660EB4A30E9B220F /* Pods-MeteoAppTests.debug.xcconfig */,
 				D0A12AD6903757E0CDE9BD8D /* Pods-MeteoAppTests.release.xcconfig */,
+				2A0C519783E9902B87A32C7C /* Pods-MeteoApp.debug-sample.xcconfig */,
+				D4A5D7CF47E2D9980420B5F6 /* Pods-MeteoAppTests.debug-sample.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -625,6 +629,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A60702478DA7FFA0F9C6B280 /* Pods-MeteoApp.debug.xcconfig */;
 			buildSettings = {
+				APP_NAME = "Weather App";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZU9X2QN68M;
@@ -644,6 +649,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 21BA5D4C910CF1F6821B40DD /* Pods-MeteoApp.release.xcconfig */;
 			buildSettings = {
+				APP_NAME = "Weather App";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZU9X2QN68M;
@@ -701,6 +707,109 @@
 			};
 			name = Release;
 		};
+		5B0B33862300157D0002CCE5 /* Debug-sample */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = "Debug-sample";
+		};
+		5B0B33872300157D0002CCE5 /* Debug-sample */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A0C519783E9902B87A32C7C /* Pods-MeteoApp.debug-sample.xcconfig */;
+			buildSettings = {
+				APP_NAME = "Weather Sample";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZU9X2QN68M;
+				INFOPLIST_FILE = MeteoApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "$(inherited) -D SAMPLE";
+				PRODUCT_BUNDLE_IDENTIFIER = fr.appricot.MeteoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = "Debug-sample";
+		};
+		5B0B33882300157D0002CCE5 /* Debug-sample */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4A5D7CF47E2D9980420B5F6 /* Pods-MeteoAppTests.debug-sample.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZU9X2QN68M;
+				INFOPLIST_FILE = MeteoAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = fr.appricot.MeteoAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MeteoApp.app/MeteoApp";
+			};
+			name = "Debug-sample";
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -708,6 +817,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5B0B333822FEBAB60002CCE5 /* Debug */,
+				5B0B33862300157D0002CCE5 /* Debug-sample */,
 				5B0B333922FEBAB60002CCE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -717,6 +827,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5B0B333B22FEBAB60002CCE5 /* Debug */,
+				5B0B33872300157D0002CCE5 /* Debug-sample */,
 				5B0B333C22FEBAB60002CCE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -726,6 +837,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5B0B335922FEC69A0002CCE5 /* Debug */,
+				5B0B33882300157D0002CCE5 /* Debug-sample */,
 				5B0B335A22FEC69A0002CCE5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;

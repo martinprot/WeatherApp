@@ -12,11 +12,8 @@ final class WeatherViewModel {
     let city: City
     var forecast: [Weather] = []
 
-    private let apiConfiguration: BackendConfiguration
-
-    internal init(city: City, apiConfiguration: BackendConfiguration = .openWeather) {
+    internal init(city: City) {
         self.city = city
-        self.apiConfiguration = apiConfiguration
     }
 
     /// Fetch current weather for the view model city
@@ -26,7 +23,7 @@ final class WeatherViewModel {
             return
         }
 
-        let service = BackendService(configuration: self.apiConfiguration)
+        let service = BackendService(configuration: .openWeather)
         let weatherRequest = CurrentWeatherAPIRequest(cityName: cityName, countryCode: city.countryCode, token: BackendConfiguration.openWeatherApiKey)
         service.fetch(request: weatherRequest, success: { json in
             do {
@@ -49,7 +46,7 @@ final class WeatherViewModel {
             completion(.failure(VMError.noCityName))
             return
         }
-        let service = BackendService(configuration: self.apiConfiguration)
+        let service = BackendService(configuration: .openWeather)
         let forecastRequest = ForecastAPIRequest(cityName: cityName, countryCode: city.countryCode, token: BackendConfiguration.openWeatherApiKey)
         service.fetch(request: forecastRequest, success: { [weak self] json in
             do {

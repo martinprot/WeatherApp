@@ -38,7 +38,7 @@ class WeatherTests: XCTestCase {
 
     func testWeatherFetch() {
         let expectation = self.expectation(description: "Weather API call")
-        let vm = WeatherViewModel(city: self.city, apiConfiguration: .sampleOpenWeather)
+        let vm = WeatherViewModel(city: self.city)
         vm.fetchWeather { result in
             switch result {
             case .failure(let error):
@@ -57,7 +57,7 @@ class WeatherTests: XCTestCase {
 
     func testWeatherForecast() {
         let expectation = self.expectation(description: "Forecast API call")
-        let vm = WeatherViewModel(city: self.city, apiConfiguration: .sampleOpenWeather)
+        let vm = WeatherViewModel(city: self.city)
         vm.fetchForecast { result in
             switch result {
             case .failure(let error):
